@@ -1,0 +1,23 @@
+ALGORITHM sentence
+VAR
+    ch :STRING [50];
+    i:INTEGER;
+    count :INTEGER:=0 ;
+    nbreWord:INTEGER:= 1 ;
+BEGIN
+     REPEAT
+         read (ch)
+     UNTIL (ch[ch.length-1]=".") ;
+    write (ch.length-1) ;
+    FOR i FROM 0 TO ch.length-1  DO
+        IF (ch[i]in["o","i","y","e","a","u"] or (ch[i]in["O",I,"Y","E","A","U"]) THEN
+            count := count +1 ;
+        END_IF
+        IF (ch[i]=" ") THEN
+            nbreWord:=nbreWord+1;
+        END_IF
+
+    END_FOR
+    write(count);
+    write(nbreWord);
+END
